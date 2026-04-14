@@ -3,242 +3,548 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juan sa Bao | Official Business Proposal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Juan Sa Bao - Premium Filipino XLB & Bao</title>
+    <meta name="description" content="Authentic Filipino XLB and Bao with Ube and Tablea flavors. Business plan pricing: ₱148/pack (4pcs). Order now!">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --ph-blue: #0038a8;
-            --ph-red: #ce1126;
-            --ph-gold: #fcd116;
-            --bg-cream: #fdfaf5;
-            --3d-light: #ffffff;
-            --3d-shadow: #d1d9e6;
+            /* Filipino theme colors matching business plan aesthetic */
+            --primary-gold: #D4A574;
+            --primary-brown: #6B3E2E;
+            --cream: #F8F1E9;
+            --dark-brown: #3D2B1F;
+            --white: #FFFFFF;
+            --shadow-light: 0 8px 25px rgba(107, 62, 46, 0.15);
+            --shadow-heavy: 0 20px 50px rgba(107, 62, 46, 0.25);
         }
 
-        html { scroll-behavior: smooth; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            margin: 0;
-            background-color: var(--bg-cream);
-            color: #2d3436;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--dark-brown);
         }
 
-        .neu-card {
-            background: var(--bg-cream);
-            border-radius: 20px;
-            box-shadow: 9px 9px 16px var(--3d-shadow), -9px -9px 16px var(--3d-light);
-            padding: 2rem;
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: 0.3s ease-in-out;
-        }
-
-        .neu-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 12px 12px 20px var(--3d-shadow), -12px -12px 20px var(--3d-light);
-        }
-
-        /* FIXED XLB IMAGE STYLING */
-        .product-img {
+        /* Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary-brown), var(--primary-gold));
+            position: fixed;
             width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 15px;
-            margin-bottom: 15px;
-            display: block;
-            box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1);
-            background-color: #eee;
-            filter: brightness(0.95) contrast(1.05); /* Makes the XLB details pop */
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-light);
         }
 
         nav {
-            padding: 20px 10%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: var(--bg-cream);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
         }
 
         .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
             font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--ph-blue);
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            color: var(--white);
+            text-decoration: none;
         }
 
-        .hero {
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .cart-icon {
+            position: relative;
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--primary-gold);
+            color: var(--dark-brown);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.8rem;
             display: flex;
             align-items: center;
-            padding: 80px 10%;
-            gap: 50px;
-            background: linear-gradient(135deg, #fdfaf5 0%, #f0f4f8 100%);
+            justify-content: center;
+            font-weight: 700;
         }
 
-        .hero-text { flex: 1; }
-        .hero-text h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 20px; color: var(--ph-blue); }
-        .hero-tagline { font-style: italic; color: var(--ph-red); font-size: 1.2rem; margin-bottom: 30px; }
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(107,62,46,0.85), rgba(107,62,46,0.7)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900"><rect fill="%23F8F1E9" width="1600" height="900"/><path fill="%236B3E2E" opacity="0.4" d="M0 450Q400 350 800 450T1600 450V900H0Z"/><circle fill="%23D4A574" opacity="0.3" cx="300" cy="250" r="120"/><circle fill="%23D4A574" opacity="0.3" cx="1300" cy="200" r="100"/></svg>');
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 80px;
+        }
 
-        .section-padding { padding: 80px 10%; }
-        .grid-3 {
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            color: var(--primary-brown);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 100px;
+            height: 4px;
+            background: var(--primary-gold);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* Products */
+        .products-section {
+            background: var(--cream);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 25px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--primary-brown));
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .product-icon {
+            font-size: 4rem;
+            color: var(--primary-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .product-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--primary-brown);
+            margin-bottom: 1rem;
+        }
+
+        .product-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-gold);
+            margin: 1.5rem 0 2rem 0;
+        }
+
+        .product-pack {
+            background: var(--cream);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-brown);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-gold), var(--primary-brown));
+            color: var(--white);
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: var(--shadow-light);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        /* Business Plan Section */
+        .business-plan {
+            background: var(--cream);
+            text-align: center;
+        }
+
+        .pricing-table {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 2rem;
+            margin: 3rem 0;
         }
 
-        .badge { background: var(--ph-gold); padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; color: var(--ph-blue); }
-
-        .cta-button {
-            background: var(--ph-blue);
-            color: white;
-            padding: 18px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 5px 5px 15px var(--3d-shadow);
-            display: inline-block;
-            transition: 0.3s;
-            border: none;
-            cursor: pointer;
+        .pricing-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-light);
+            border-top: 5px solid var(--primary-gold);
         }
 
-        .cta-button:hover { background: var(--ph-red); transform: scale(1.05); }
+        .cost-price {
+            font-size: 1.8rem;
+            color: var(--primary-brown);
+            margin-bottom: 1rem;
+        }
 
-        .business-table {
+        .selling-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+        }
+
+        .profit {
+            background: #E8F5E8;
+            padding: 1rem;
+            border-radius: 15px;
+            margin-top: 1.5rem;
+        }
+
+        /* Team */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 2rem;
+            background: var(--cream);
+            border-radius: 20px;
+            box-shadow: var(--shadow-light);
+        }
+
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--primary-brown));
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 2rem;
+        }
+
+        /* Contact */
+        .contact-section {
+            background: var(--cream);
+        }
+
+        .contact-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 25px;
+            box-shadow: var(--shadow-light);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-brown);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
             width: 100%;
-            border-collapse: separate;
-            border-spacing: 0 15px;
-            margin-top: 30px;
+            padding: 1.2rem;
+            border: 2px solid #EDE4D4;
+            border-radius: 15px;
+            font-family: inherit;
+            font-size: 1.1rem;
+            transition: border-color 0.3s;
         }
-        .business-table tr { background: white; box-shadow: 4px 4px 10px rgba(0,0,0,0.05); border-radius: 10px; }
-        .business-table td { padding: 20px; border-top: 1px solid #f1f1f1; border-bottom: 1px solid #f1f1f1; }
 
-        #success-msg { display: none; text-align: center; background: #d4edda; color: #155724; padding: 20px; border-radius: 12px; margin-top: 20px; }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+        }
+
+        /* Cart Modal */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cart-content {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 25px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #EDE4D4;
+        }
+
+        .cart-total {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-gold);
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-brown);
+            color: var(--cream);
+            text-align: center;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .social-links a {
+            color: var(--primary-gold);
+            font-size: 2rem;
+            margin: 0 1rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--white);
+            transform: translateY(-5px);
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            animation: fadeInUp 0.8s ease forwards;
+        }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <a href="#" class="logo">🍘 Juan Sa Bao</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Order Now</a></li>
+            </ul>
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </nav>
+    </header>
 
-    <nav>
-        <div class="logo">Juan sa Bao</div>
-        <div>
-            <a href="#menu" style="margin-right:20px; text-decoration:none; color:inherit;">Menu</a>
-            <a href="#about" style="margin-right:20px; text-decoration:none; color:inherit;">Blueprint</a>
-            <a href="#order-section" class="cta-button" style="padding:10px 20px;">Pre-Order</a>
+    <!-- Hero Section -->
+    <section id="home" class="hero animate">
+        <div class="hero-content">
+            <h1>Juan Sa Bao</h1>
+            <p class="subtitle">Premium Filipino XLB & Bao • Business Plan Pricing • 40% Markup Strategy</p>
+            <a href="#products" class="btn-primary">Shop Now</a>
         </div>
-    </nav>
+    </section>
 
-    <section class="hero">
-        <div class="hero-text">
-            <span class="badge">FIRST-MOVER ADVANTAGE</span>
-            <h1>Reimagining the <br><span style="color:var(--ph-red)">Pinoy Comfort.</span></h1>
-            <p class="hero-tagline">"Nostalgic savory culture in oriental style bao wrapping"</p>
-            <p>Juan sa Bao is the pioneer in fusion XLB, infusing authentic <b>Sinigang, Bulalo, and Adobo</b> broths into traditional soup dumplings.</p>
-            <br>
-            <a href="#menu" class="cta-button">VIEW THE MENU</a>
-        </div>
-        <div class="hero-image">
-            <div class="neu-card" style="width: 300px; height: 300px; display: flex; align-items: center; justify-content: center; font-size: 5rem;">
-                🥟
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <h2 class="section-title animate">Our Premium Products</h2>
+        <div class="products-grid">
+            <div class="product-card animate">
+                <div class="product-icon">
+                    <i class="fas fa-dumpling-bite"></i>
+                </div>
+                <h3>Product 1 XLB Pack</h3>
+                <div class="product-pack">4 Pieces per Pack</div>
+                <div class="product-price">₱148</div>
+                <p>Production Cost: ₱105.37/pack | 40% Markup Applied</p>
+                <button class="btn-primary" onclick="addToCart('Product 1 XLB Pack (4pcs)', 148)">Add to Cart</button>
+            </div>
+            <div class="product-card animate">
+                <div class="product-icon">
+                    <i class="fas fa-candy-cane"></i>
+                </div>
+                <h3>Product 2 XLB Pack</h3>
+                <div class="product-pack">4 Pieces per Pack</div>
+                <div class="product-price">₱135</div>
+                <p>Production Cost: ₱96.12/pack | 40% Markup Applied</p>
+                <button class="btn-primary" onclick="addToCart('Product 2 XLB Pack (4pcs)', 135)">Add to Cart</button>
             </div>
         </div>
     </section>
 
-    <section class="section-padding" id="menu">
-        <h2 style="text-align:center; margin-bottom: 50px; color: var(--ph-blue);">The Signature Fusion Collection</h2>
-        <div class="grid-3">
-            
-            <div class="neu-card">
-                <img src="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?q=80&w=800&auto=format&fit=crop" alt="Traditional Xiao Long Bao" class="product-img">
-                <h3 style="color:var(--ph-red)">Sinigang XLB</h3>
-                <p>Signature tamarind-infused pork broth. The perfect balance of sour and savory in one bite.</p>
-                <span class="badge">BEST SELLER</span>
+    <!-- Business Plan Pricing -->
+    <section id="pricing" class="business-plan">
+        <h2 class="section-title animate">Business Plan Pricing</h2>
+        <div class="pricing-table">
+            <div class="pricing-card animate">
+                <h3>Product 1 XLB</h3>
+                <div class="cost-price">Production Cost</div>
+                <div class="selling-price">₱105.37 / pack</div>
+                <div class="profit">
+                    <strong>40% Markup → ₱148 Retail</strong><br>
+                    <small>Profit: ₱42.63 per pack (4pcs)</small>
+                </div>
             </div>
-
-            <div class="neu-card">
-                <img src="https://cdn.ready-market.com.tw/21cd62de/Templates/pic/ANKO-Xiao-Long-Bao-1200x1200.jpg?v=09ffda8a$0" alt="Adobo Fusion XLB" class="product-img">
-                <h3 style="color:var(--ph-blue)">Adobo XLB</h3>
-                <p>National dish reimagined with a rich soy-vinegar reduction soup and tender pork filling.</p>
-            </div>
-
-            <div class="neu-card">
-                <img src="https://quanshuiwetmarket.com/cdn/shop/products/ShanghaiXLB2.png?v=1630428998$0" alt="Bulalo XLB Steamed" class="product-img">
-                <h3 style="color:var(--ph-gold)">Bulalo XLB</h3>
-                <p>Beef marrow essence captured in a delicate wrapper. The ultimate Batangas comfort in a bao.</p>
-            </div>
-
-        </div>
-    </section>
-
-    
-
-    <section class="section-padding" id="about">
-        <h2 style="text-align:center; margin-bottom: 50px;">Business Blueprint</h2>
-        <div class="grid-3">
-            <div class="neu-card">
-                <h3 style="color:var(--ph-blue)">Unfair Advantage</h3>
-                <p>Hard to replicate broth techniques and a strong Filipino identity that competitors cannot easily copy.</p>
-            </div>
-            <div class="neu-card">
-                <h3 style="color:var(--ph-blue)">Revenue Streams</h3>
-                <p>Income generated through per-set sales, combo meals, and catering for the TamBlitz community.</p>
-            </div>
-            <div class="neu-card">
-                <h3 style="color:var(--ph-blue)">Early Adopters</h3>
-                <p>Targeting Food Vloggers, Culinary Students, and Urban Millennials.</p>
+            <div class="pricing-card animate">
+                <h3>Product 2 XLB</h3>
+                <div class="cost-price">Production Cost</div>
+                <div class="selling-price">₱96.12 / pack</div>
+                <div class="profit">
+                    <strong>40% Markup → ₱135 Retail</strong><br>
+                    <small>Profit: ₱38.88 per pack (4pcs)</small>
+                </div>
             </div>
         </div>
+        <p style="font-size: 1.2rem; margin-top: 2rem;">Scalable pricing model perfect for food stalls, markets, and online sales</p>
     </section>
 
-    <section class="section-padding" id="team" style="background: #f0f4f8;">
-        <h2 style="text-align:center;">Executive Management</h2>
-        <table class="business-table">
-            <thead>
-                <tr><th>Executive Name</th><th>Position</th><th>Rationale</th></tr>
-            </thead>
-            <tbody>
-                <tr><td><b>Crisha Dimatacot</b></td><td><span class="badge">CEO</span></td><td>Vision-setting and strategic leadership.</td></tr>
-                <tr><td><b>Ashley Asuncion</b></td><td><span class="badge" style="background:#00d2d3; color:white;">COO</span></td><td>Operations and logistics management.</td></tr>
-                <tr><td><b>Princess Cotas</b></td><td><span class="badge" style="background:#54a0ff; color:white;">CFO</span></td><td>Financial sustainability and cost analysis.</td></tr>
-                <tr><td><b>Trisha Berba</b></td><td><span class="badge" style="background:#5f27cd; color:white;">CTO</span></td><td>Digital innovation and tech solutions.</td></tr>
-                <tr><td><b>Angelien Valdez</b></td><td><span class="badge" style="background:#ff9f43; color:white;">CMO</span></td><td>Marketing and social media strategy.</td></tr>
-            </tbody>
-        </table>
-    </section>
-
-    <section class="section-padding" id="order-section">
-        <div class="neu-card" style="max-width: 600px; margin: auto;">
-            <h2 style="text-align:center; color: var(--ph-blue);">Reservation Form</h2>
-            <form id="baoOrderForm">
-                <input type="text" placeholder="Full Name" required style="width:100%; padding:15px; border-radius:12px; border:1px solid #ddd; margin-bottom:15px; font-family:inherit;">
-                <select required style="width:100%; padding:15px; border-radius:12px; border:1px solid #ddd; margin-bottom:15px; font-family:inherit;">
-                    <option value="">-- Choose your fusion --</option>
-                    <option value="Sinigang">Sinigang XLB</option>
-                    <option value="Adobo">Adobo XLB</option>
-                    <option value="Bulalo">Bulalo XLB</option>
-                </select>
-                <button type="submit" class="cta-button" style="width:100%">CONFIRM PRE-ORDER</button>
-            </form>
-            <div id="success-msg">
-                <h3>Salamat, Ka-Bao! 🥟</h3>
-                <p>Your order for the TamBlitz fair has been recorded.</p>
+    <!-- Team -->
+    <section id="team">
+        <h2 class="section-title animate">Our Team</h2>
+        <div class="team-grid">
+            <div class="team-member animate">
+                <div class="team-avatar">CD</div>
+                <h4>Crisha Dimatacot</h4>
+                <p>CEO & Founder</p>
+            </div>
+            <div class="team-member animate">
+                <div class="team-avatar">AA</div>
+                <h4>Ashley Asuncion</h4>
+                <p>Operations Director</p>
+            </div>
+            <div class="team-member animate">
+                <div class="team-avatar">PC</div>
+                <h4>Princess Cotas</h4>
+                <p>Finance Manager</p>
             </div>
         </div>
     </section>
 
-    <footer style="text-align:center; padding: 60px 10%; background: var(--ph-blue); color: white;">
-        <p>&copy; 2026 Juan sa Bao | Culinary Authenticity Reimagined</p>
-    </footer>
-
-    <script>
-        document.getElementById('baoOrderForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            this.style.display = 'none';
-            document.getElementById('success-msg').style.display = 'block';
-        });
-    </script>
-</body>
-</html>
+    <!-- Contact/Order Form -->
+   
